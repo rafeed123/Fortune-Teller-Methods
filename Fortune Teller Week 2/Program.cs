@@ -106,6 +106,22 @@ namespace Fortune_Teller_Week_2
             int siblings = int.Parse(Console.ReadLine());
 
 
+
+
+
+            
+
+
+
+
+
+        }
+
+
+
+        static string RetireDestination(int siblings)
+        {
+
             string vacHome = "";
 
 
@@ -134,14 +150,9 @@ namespace Fortune_Teller_Week_2
                 vacHome = ("Prison");
             }
 
-
-
             
-
-
-
-
-
+            return vacHome;
+                
         }
 
         static int TimeUntillRetire(int age)
