@@ -59,6 +59,27 @@ namespace Fortune_Teller_Week_2
             Console.WriteLine("Now can you tell me you favorite ROYGBIV color, If you dont know what colors are in ROYGBIV enter help ");
 
             string yourClr = Console.ReadLine();
+
+            
+
+            Console.WriteLine("How many siblings you have");
+
+            int siblings = int.Parse(Console.ReadLine());
+
+
+
+
+
+            
+
+
+
+
+
+        }
+
+        static string RetireVehicle(string yourClr)
+        {
             yourClr = yourClr.ToLower();
 
 
@@ -100,24 +121,8 @@ namespace Fortune_Teller_Week_2
                     break;
             }
 
-
-            Console.WriteLine("How many siblings you have");
-
-            int siblings = int.Parse(Console.ReadLine());
-
-
-
-
-
-            
-
-
-
-
-
+            return vehicle;
         }
-
-
 
         static string RetireDestination(int siblings)
         {
