@@ -10,30 +10,117 @@ namespace Fortune_Teller_Week_2
     {
         static void Main(string[] args)
         {
-            
 
-            Console.WriteLine("If you want to know your future please enter your first name");
+            Console.WriteLine("Welcome to the fortune teller application you can EXIT anytime by entering \"QUIT\" or RESTART by entering \"RESTART\" ");
+            Console.WriteLine("\n");
+            Console.WriteLine("If you want to know your future please enter your first name.");
 
             string firstName = Console.ReadLine();
 
-            Console.WriteLine("Thank you " + firstName + "." + " Now please enter your last name");
+            if (firstName.ToLower() == "quit")
+                Quit();
+
+            if (firstName.ToLower() == "restart")
+                Main(args);
+
+
+
+            Console.WriteLine("Thank you " + firstName + "." + " Now please enter your last name.");
 
             string lastName = Console.ReadLine();
+
+            if (lastName.ToLower() == "quit")
+                Quit();
+
+            if (lastName.ToLower() == "restart")
+                Main(args);
+
+
 
             Console.WriteLine(Greetings(firstName, lastName));
 
 
 
+            Console.WriteLine("Now please enter your age.");
 
-            Console.WriteLine("Now please enter your age ");
+            string ageStr = Console.ReadLine();
+            
+            
 
-            int age = int.Parse(Console.ReadLine());
+            if (ageStr.ToLower() == "quit")
+                Quit();
+
+            if (ageStr.ToLower() == "restart")
+                Main(args);
+            int age = int.Parse(ageStr);
 
 
-            Console.WriteLine("Now that I know your age tell me what month you were born using a number ");
 
-            int birthMonth = int.Parse(Console.ReadLine());
-            int money;
+            Console.WriteLine("Now that I know your age tell me what month you were born using a number.");
+            string birthMonthStr = Console.ReadLine();
+            if (birthMonthStr.ToLower() == "quit")
+                Quit();
+
+            if (birthMonthStr.ToLower() == "restart")
+                Main(args);
+
+            int birthMonth = int.Parse(birthMonthStr);
+
+
+            Console.WriteLine("Now can you tell me you favorite ROYGBIV color, If you dont know what colors are in ROYGBIV enter help.");
+
+            string yourClr = Console.ReadLine();
+            yourClr = yourClr.ToLower();
+            if (yourClr.ToLower() == "quit")
+                Quit();
+
+            if (yourClr.ToLower() == "restart")
+                Main(args);
+            if (yourClr == "help")
+            {
+                Console.WriteLine("Red, Orange, Yellow, Green, Blue, Indigo, Violet");
+                Console.WriteLine("Now enter your favorite ROYGBIV color.");
+                yourClr = Console.ReadLine();
+                if (yourClr.ToLower() == "quit")
+                    Quit();
+
+                if (yourClr.ToLower() == "restart")
+                    Main(args);
+            }
+
+
+            Console.WriteLine("How many siblings you have");
+            string sibsStr = Console.ReadLine();
+            if (sibsStr.ToLower() == "quit")
+                Quit();
+
+            if (sibsStr.ToLower() == "restart")
+                Main(args);
+            int siblings = int.Parse(sibsStr);
+
+
+            Console.WriteLine(firstName + " " + lastName + "you will retire in " + TimeUntillRetire(age) + " years with $" + RetirementFunds(birthMonth) + "K in the bank, a vacation home in " + RetireDestination(siblings) + " and you will drive a " + RetireVehicle(yourClr));
+
+            Judgement();
+
+        }
+
+        //Methods used for recalling ones future
+
+
+        static void Judgement()
+        {
+            Console.WriteLine("Wow looks like an interesting life ahead of you!");
+        }
+
+        static void Quit()
+        {
+            Environment.Exit(0);
+        }
+
+        static double RetirementFunds(int birthMonth)
+        {
+            double money;
 
             if (birthMonth == 1 - 4)
             {
@@ -52,49 +139,19 @@ namespace Fortune_Teller_Week_2
                 money = 10;
             }
 
-
-
-
-
-            Console.WriteLine("Now can you tell me you favorite ROYGBIV color, If you dont know what colors are in ROYGBIV enter help ");
-
-            string yourClr = Console.ReadLine();
-
-            
-
-            Console.WriteLine("How many siblings you have");
-
-            int siblings = int.Parse(Console.ReadLine());
-
-
-
-
-
-            
-
-
-
-
-
+            return money;
         }
 
         static string RetireVehicle(string yourClr)
         {
-            yourClr = yourClr.ToLower();
-
 
             string vehicle = "";
-
-
-
 
             if (yourClr == "help")
             {
                 Console.WriteLine("Red, Orange, Yellow, Green, Blue, Indigo, Violet");
                 yourClr = Console.ReadLine();
             }
-
-
 
             switch (yourClr.ToLower())
             {
@@ -121,7 +178,7 @@ namespace Fortune_Teller_Week_2
                     break;
             }
 
-            return vehicle;
+               return vehicle;
         }
 
         static string RetireDestination(int siblings)
@@ -155,9 +212,9 @@ namespace Fortune_Teller_Week_2
                 vacHome = ("Prison");
             }
 
-            
+
             return vacHome;
-                
+
         }
 
         static int TimeUntillRetire(int age)
@@ -173,7 +230,7 @@ namespace Fortune_Teller_Week_2
             }
 
 
-           int TimeUntillRetire = ageResult;
+            int TimeUntillRetire = ageResult;
             return TimeUntillRetire;
         }
 
@@ -181,23 +238,29 @@ namespace Fortune_Teller_Week_2
         {
             string Greetings = ("Greetings " + fName + " " + lName + " I will tell you your future.");
 
-            return Greetings; 
-         }    
-        
-            
-
-           
-
+            return Greetings;
+        }
 
 
         
-
-
-
-
-
-
-
+        
     }
-}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
