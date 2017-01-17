@@ -44,8 +44,8 @@ namespace Fortune_Teller_Week_2
             Console.WriteLine("Now please enter your age.");
 
             string ageStr = Console.ReadLine();
-            
-            
+
+
 
             if (ageStr.ToLower() == "quit")
                 Quit();
@@ -89,6 +89,7 @@ namespace Fortune_Teller_Week_2
             }
 
 
+
             Console.WriteLine("How many siblings you have");
             string sibsStr = Console.ReadLine();
             if (sibsStr.ToLower() == "quit")
@@ -100,6 +101,8 @@ namespace Fortune_Teller_Week_2
 
 
             Console.WriteLine(firstName + " " + lastName + "you will retire in " + TimeUntillRetire(age) + " years with $" + RetirementFunds(birthMonth) + "K in the bank, a vacation home in " + RetireDestination(siblings) + " and you will drive a " + RetireVehicle(yourClr));
+            Console.WriteLine("\n");
+
 
             Judgement();
 
@@ -178,7 +181,7 @@ namespace Fortune_Teller_Week_2
                     break;
             }
 
-               return vehicle;
+            return vehicle;
         }
 
         static string RetireDestination(int siblings)
@@ -242,10 +245,10 @@ namespace Fortune_Teller_Week_2
         }
 
 
-        
-        
+
+
     }
- }
+}
 
 
 
@@ -262,5 +265,5 @@ namespace Fortune_Teller_Week_2
 
 
 
-  
+
 
